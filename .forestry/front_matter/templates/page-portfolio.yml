@@ -21,13 +21,13 @@ fields:
   config:
     required: false
   label: H1
-- name: seo
-  type: include
-  config: {}
-  template: seo
-  label: SEO
 - name: blocks
   type: include
   config: {}
   template: _gallery-row
   label: Gallery
+- name: seo
+  type: include
+  config: {}
+  template: seo
+  label: SEO
