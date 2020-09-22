@@ -33,6 +33,11 @@ fields:
     config: {}
     template: _gallery-row
     label: Gallery
+  - name: wysiwyg
+    type: include
+    config: {}
+    template: _wysiwyg
+    label: WYSIWYG
   config:
     min: 
     max: 
