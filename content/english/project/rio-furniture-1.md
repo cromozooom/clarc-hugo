@@ -37,6 +37,13 @@ blocks:
           image_two: "/uploads/img1.jpg"
           alt_image_one: image 1
           alt_image_two: Image 2
+  - title: Last image on the page
+    block_type: gallery
+    gallery_row:
+      column: 1_column
+      1_column:
+        image: "/uploads/img1.jpg"
+        alternative_text: sample
 
 ---
 ## Behance Website Redesign
