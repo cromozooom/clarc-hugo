@@ -24,8 +24,8 @@ fields:
 - name: blocks
   type: include
   config: {}
-  template: _gallery-row
-  label: Gallery
+  template: _blocks
+  label: Blocks
 - name: seo
   type: include
   config: {}
