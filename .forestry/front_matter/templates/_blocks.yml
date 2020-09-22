@@ -5,41 +5,42 @@ fields:
 - name: blocks
   type: field_group
   config: {}
-  label: Blocks
-- name: block
-  type: field_group_list
   fields:
-  - name: title
-    type: text
+  - name: block
+    type: field_group_list
+    fields:
+    - name: title
+      type: text
+      config:
+        required: false
+      label: Title
+    - name: block_type
+      type: select
+      default: []
+      config:
+        required: false
+        options:
+        - gallery
+        - wysiwyg
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Block Type
+    - name: gallery
+      type: include
+      config: {}
+      template: _gallery-row
+      label: Gallery
+    - name: wysiwyg
+      type: include
+      config: {}
+      template: _wysiwyg
+      label: WYSIWYG
     config:
-      required: false
-    label: Title
-  - name: block_type
-    type: select
-    default: []
-    config:
-      required: false
-      options:
-      - Gallery
-      - WYSIWYG
-      source:
-        type: simple
-        section: 
-        file: 
-        path: 
-    label: Block Type
-  - name: gallery
-    type: include
-    config: {}
-    template: _gallery-row
-    label: Gallery
-  - name: wysiwyg
-    type: include
-    config: {}
-    template: _wysiwyg
-    label: WYSIWYG
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Block
+      min: 
+      max: 
+      labelField: 
+    label: Block
+  label: Blocks
