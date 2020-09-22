@@ -1,4 +1,40 @@
 ---
 label: _BLOCKS
 hide_body: true
-fields: []
+fields:
+- name: blocks
+  type: field_group
+  config: {}
+  label: Blocks
+- name: block
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: block_type
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - Gallery
+      - WYSIWYG
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Block Type
+  - name: gallery
+    type: include
+    config: {}
+    template: _gallery-row
+    label: Gallery
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Block
