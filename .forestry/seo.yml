@@ -1,0 +1,28 @@
+---
+label: _seo
+hide_body: true
+fields:
+- name: seo
+  type: field_group
+  config: {}
+  fields:
+  - name: featured_image
+    type: file
+    config:
+      maxSize: 64
+    label: Featured image
+  - name: meta_description
+    type: text
+    config:
+      required: false
+    label: Meta description
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: sitemap
+    type: boolean
+    label: Sitemap
+    default: true
+  label: SEO
