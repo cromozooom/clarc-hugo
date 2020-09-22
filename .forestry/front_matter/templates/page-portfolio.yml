@@ -26,3 +26,8 @@ fields:
   config: {}
   template: seo
   label: SEO
+- name: blocks
+  type: include
+  config: {}
+  template: _gallery-row
+  label: Gallery
