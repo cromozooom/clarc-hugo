@@ -5,4 +5,20 @@ fields:
 - name: 2_column
   type: field_group
   config: {}
+  fields:
+  - name: image_number
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - one
+      - two
+      - three
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Image Number
   label: 2 column
