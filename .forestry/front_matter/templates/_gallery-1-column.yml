@@ -2,7 +2,7 @@
 label: _gallery-1-column
 hide_body: true
 fields:
-- name: 1_column
+- name: one_column
   type: field_group
   config: {}
   fields:

@@ -12,8 +12,8 @@ fields:
     config:
       required: false
       options:
-      - 1_column
-      - 2_column
+      - one_column
+      - two_column
       source:
         type: simple
         section: 
@@ -27,7 +27,7 @@ fields:
     label: One column
     showOnly:
       field: column
-      value: 1_column
+      value: one_column
   - name: two_column
     type: include
     config: {}
@@ -35,5 +35,5 @@ fields:
     label: Two column
     showOnly:
       field: column
-      value: 2_column
+      value: two_column
   label: Gallery row

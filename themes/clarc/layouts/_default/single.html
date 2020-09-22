@@ -1,4 +1,16 @@
 {{ define "main" }}
+	{{/*
+	<ul>
+		{{ range $.Params.blocks.block }}
+			<li>
+				{{ .block_type }} - {{ . }}
+			</li>
+
+		{{ end }}
+	</ul>
+	<hr>
+	*/}}
+	
 	<section class="page-wrapper">
 		<div class="container">
 			<div class="row">
@@ -51,4 +63,73 @@
 		</div>
 	</section>
 
+	<section>
+		<div class="container">
+			{{ range $.Params.blocks.block }}
+				{{ if eq .block_type "gallery" }}
+					<div class="row">
+						{{ if eq .gallery_row.column "one_column" }}
+							<div class="col py-2">
+								{{ $image_1_Resource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .gallery_row.one_column.image ) }}
+								{{ if eq $image_1_Resource nil }}
+									<p class="alert alert-danger mx-4 py-4">
+										You're close. But there is a mistake in the primary thumb image -{{ $image_1_Resource }}. 
+									</p>
+								{{ else }}
+									{{ $image600 := ( $image_1_Resource.Fill "1180x600 q90") }}
+									{{ $image400 := ( $image_1_Resource.Fill "400x400 q90") }}
+									{{ $image300 := $image_1_Resource.Fill "400x400 q90" }}
+									<picture>
+										<source srcset="{{ $image600.RelPermalink }}" media="(min-width: 1200px)">
+										<source srcset="{{ $image400.RelPermalink }}" media="(min-width: 600px)">
+										<source srcset="{{ $image300.RelPermalink }}" media="(max-width: 500px)">
+										<img class="img-fluid blocks--img lozad" data-srcset="{{ $image600.RelPermalink }}" alt="">
+									</picture>
+								{{ end }}
+
+							</div>
+						{{ else if eq .gallery_row.column "two_column" }}
+							<div class="col py-2">
+								{{ $image_2_Resource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .gallery_row.two_column.two_images.image_one ) }}
+								{{ if eq $image_2_Resource nil }}
+									<p class="alert alert-danger mx-4 py-4">
+										You're close. But there is a mistake in the primary thumb image -{{ $image_2_Resource }}. 
+									</p>
+								{{ else }}
+									{{ $image600 := ( $image_2_Resource.Fill "1080x600 q90") }}
+									{{ $image400 := ( $image_2_Resource.Fill "400x400 q90") }}
+									{{ $image300 := $image_2_Resource.Fill "400x400 q90" }}
+									<picture>
+										<source srcset="{{ $image600.RelPermalink }}" media="(min-width: 1200px)">
+										<source srcset="{{ $image400.RelPermalink }}" media="(min-width: 600px)">
+										<source srcset="{{ $image300.RelPermalink }}" media="(max-width: 500px)">
+										<img class="img-fluid blocks--img lozad" data-srcset="{{ $image600.RelPermalink }}" alt="">
+									</picture>
+								{{ end }}
+							</div>
+							<div class="col py-2">
+								{{ $image_3_Resource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .gallery_row.two_column.two_images.image_one ) }}
+								{{ if eq $image_3_Resource nil }}
+									<p class="alert alert-danger mx-4 py-4">
+										You're close. But there is a mistake in the primary thumb image -{{ $image_3_Resource }}. 
+									</p>
+								{{ else }}
+									{{ $image600 := ( $image_3_Resource.Fill "1080x600 q90") }}
+									{{ $image400 := ( $image_3_Resource.Fill "400x400 q90") }}
+									{{ $image300 := $image_3_Resource.Fill "400x400 q90" }}
+									<picture>
+										<source srcset="{{ $image600.RelPermalink }}" media="(min-width: 1200px)">
+										<source srcset="{{ $image400.RelPermalink }}" media="(min-width: 600px)">
+										<source srcset="{{ $image300.RelPermalink }}" media="(max-width: 500px)">
+										<img class="img-fluid blocks--img lozad" data-srcset="{{ $image600.RelPermalink }}" alt="">
+									</picture>
+								{{ end }}
+							</div>
+						{{ end }}
+
+					</div>
+				{{ end }}
+			{{ end }}	
+		</div>
+	</section>
 {{ end }}
