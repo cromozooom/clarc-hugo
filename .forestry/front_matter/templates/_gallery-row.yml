@@ -1,4 +1,23 @@
 ---
 label: _gallery-row
 hide_body: true
-fields: []
+fields:
+- name: gallery_row
+  type: field_group
+  config: {}
+  fields:
+  - name: column
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - 1_column
+      - 2_column
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Column
+  label: Gallery row
