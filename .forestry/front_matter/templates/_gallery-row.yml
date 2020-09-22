@@ -20,4 +20,20 @@ fields:
         file: 
         path: 
     label: Column
+  - name: one_column
+    type: include
+    config: {}
+    template: _gallery-1-column
+    label: One column
+    showOnly:
+      field: column
+      value: 1_column
+  - name: two_column
+    type: include
+    config: {}
+    template: _gallery-2-column
+    label: Two column
+    showOnly:
+      field: column
+      value: 2_column
   label: Gallery row
