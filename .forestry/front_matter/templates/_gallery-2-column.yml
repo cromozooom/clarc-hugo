@@ -1,4 +1,8 @@
 ---
 label: _gallery-2-column
 hide_body: false
-fields: []
+fields:
+- name: 2_column
+  type: field_group
+  config: {}
+  label: 2 column
