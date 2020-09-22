@@ -9,6 +9,8 @@ sections:
   label: Project
   create: all
   match: "**/*"
+  templates:
+  - page-portfolio
 - type: heading
   label: Data
 upload_dir: content/uploads
