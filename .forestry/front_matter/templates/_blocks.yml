@@ -33,11 +33,17 @@ fields:
       config: {}
       template: _gallery-row
       label: Gallery
+      showOnly:
+        field: block_type
+        value: gallery
     - name: wysiwyg
       type: include
       config: {}
       template: _wysiwyg
       label: WYSIWYG
+      showOnly:
+        field: block_type
+        value: wysiwyg
     config:
       min: 
       max: 
