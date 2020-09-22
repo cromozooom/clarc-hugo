@@ -12,7 +12,6 @@ fields:
     config:
       required: false
       options:
-      - one
       - two
       - three
       source:
@@ -21,4 +20,70 @@ fields:
         file: 
         path: 
     label: Image Number
+  - name: two_images
+    type: field_group
+    config: {}
+    fields:
+    - name: image_one
+      type: file
+      config:
+        maxSize: 64
+      label: Image one
+    - name: alt_image_one
+      type: text
+      config:
+        required: false
+      label: Alt image one
+    - name: image_two
+      type: file
+      config:
+        maxSize: 64
+      label: Image two
+    - name: alt_image_two
+      type: text
+      config:
+        required: false
+      label: Alt image two
+    label: Two images
+    showOnly:
+      field: image_number
+      value: two
+  - name: three_images
+    type: field_group
+    config: {}
+    fields:
+    - name: image_one
+      type: file
+      config:
+        maxSize: 64
+      label: Image one
+    - name: alt_image_one
+      type: text
+      config:
+        required: false
+      label: Alt image one
+    - name: image_two
+      type: file
+      config:
+        maxSize: 64
+      label: Image two
+    - name: alt_image_two
+      type: text
+      config:
+        required: false
+      label: Alt image two
+    - name: image_three
+      type: file
+      config:
+        maxSize: 64
+      label: Image three
+    - name: alt_image_three
+      type: text
+      config:
+        required: false
+      label: Alt image three
+    label: Three images
+    showOnly:
+      field: image_number
+      value: three
   label: 2 column
